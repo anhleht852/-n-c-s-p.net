@@ -1,0 +1,41 @@
+﻿@model ReviewFood.Models.BaiViet
+
+@{
+    ViewBag.Title = "Delete";
+    ViewData["TitleHeader"] = "Delete Bài Viết";
+}
+
+
+<div>
+    <hr />
+    <dt> Tiêu Đề</dt>
+    <dd> @Html.DisplayFor(model => model.TieuDe) </dd>
+
+    <dt> Hình ảnh </dt>
+    <dd> @Html.DisplayFor(model => model.HinhAnh) </dd>
+    <dt>Ngày Tạo</dt>
+    <dd> @Html.DisplayFor(model => model.NgayTao)</dd>
+
+    <dt>Trạng Thái</dt>
+    <dd> @Html.DisplayFor(model => model.TrangThai)</dd>
+
+    <dt>Tên Danh Mục 1</dt>
+    <dd> @Html.DisplayFor(model => model.DanhMucCha.TenDM)</dd>
+
+    <dt>Tên danh mục 2 </dt>
+    <dd> @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)</dd>
+
+    <dt>Tên tài khoản </dt>
+    <dd> @Html.DisplayFor(model => model.IdTaiKhoan)</dd>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    }
+    @Html.ActionLink("Quay Về", "Index")
+</div>
+

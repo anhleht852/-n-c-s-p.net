@@ -1,0 +1,108 @@
+﻿@model ReviewFood.Models.TaiKhoan
+
+@{
+    ViewData["Title"] = "Delete Account";
+    ViewData["TitleHeader"] = "Xóa tài khoản ";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có chắc muốn xóa?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HoTen)*@
+            Họ Tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.GioiTinh)*@
+            Giới Tính
+        </dt>
+
+        <dd>
+            @if (Model.GioiTinh == true)
+            {
+                <p>Nam</p>
+            }
+            else
+            {
+                <p>Nữ</p>
+            }
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Email)*@
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DiaChi)*@
+            Địa Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TrangThai)*@
+            Trạng Thái 
+        </dt>
+
+        <dd>
+            @if (Model.TrangThai == true)
+            {
+                <p>Kích hoạt</p>
+            }
+            else
+            {
+                <p>Vô hiệu</p>
+            }
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Quyen)*@
+            Quyền
+        </dt>
+
+        <dd>
+            @if (Model.Quyen == true)
+            {
+                <p>Admin</p>
+            }
+            else
+            {
+                <p>Người dùng</p>
+            }
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NgaySinh)*@
+            Ngày Sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Về", "Index")
+        </div>
+    }
+</div>

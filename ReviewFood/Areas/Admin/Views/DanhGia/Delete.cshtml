@@ -1,0 +1,76 @@
+﻿@model ReviewFood.Models.DanhGia
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa Đánh giá </h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NoiDung)*@
+            Nội Dung
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NgayTao)*@
+            Ngày Tạo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTao)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NgaySua)*@
+            Ngày Sửa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySua)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TrangThai)*@
+            Trạng Thái
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.BaiViet.TieuDe)*@
+            Tiêu Đề
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaiViet.TieuDe)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TaiKhoan.HoTen)*@
+            Họ Tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan.HoTen)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay về", "Index")
+        </div>
+    }
+</div>

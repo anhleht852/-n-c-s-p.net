@@ -1,0 +1,113 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+    <title>@ViewData["Title"] - Quản Lý Web</title>
+
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/toastr/build/toastr.min.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/summernote/summernote-lite.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/css/demo.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/css/style.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/css/select2.min.css">
+    <link rel="stylesheet" href="/Assets/admin/dist/css/select2-bootstrap4.min.css">
+</head>
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <form class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
+                        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="ion ion-search"></i></a></li>
+                    </ul>
+
+                </form>
+            </nav>
+            <div class="main-sidebar">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="/Admin/Home">Admin Site</a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Dashboard</li>
+                        <li class="active">
+                            <a href="/TaiKhoan/AdminToHome"><i class="ion ion-speedometer"></i><span>Trang Chủ Home</span></a>
+                        </li>
+
+                        <hr />
+
+
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Danh mục 1</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="/Admin/DanhMucCha/Index"><i class="ion ion-ios-circle-outline"></i> Danh sách</a></li>
+                                <li><a href="/Admin/DanhMucCha/Create"><i class="ion ion-ios-circle-outline"></i> Thêm</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Danh mục 2</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="/Admin/DanhMuc/Index"><i class="ion ion-ios-circle-outline"></i> Danh sách</a></li>
+                                <li><a href="/Admin/DanhMuc/Create"><i class="ion ion-ios-circle-outline"></i> Thêm</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-nutrition"></i> Quản Lý Tin</a>
+                            <ul class="menu-dropdown">
+                                <li><a href="/Admin/BaiViet/Index"><i class="ion ion-ios-circle-outline"></i> Danh sách</a></li>
+                                <li><a href="/Admin/BaiViet/Create"><i class="ion ion-ios-circle-outline"></i> Thêm</a></li>
+                                <li><a href="/Admin/BaiViet/TinChuaDuyet"><i class="ion ion-ios-circle-outline"></i> Chưa Duyệt</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-copy-outline"></i><span>Tài khoản</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="/Admin/TaiKhoan/Index"><i class="ion ion-ios-circle-outline"></i> Danh sách</a></li>
+                                <li><a href="/Admin/TaiKhoan/Create"><i class="ion ion-ios-circle-outline"></i> Thêm</a></li>
+                                <li><a href="/Admin/TaiKhoan/ChuaDuyetTK"><i class="ion ion-ios-circle-outline"></i> Chưa Duyệt</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                    </ul>
+                </aside>
+            </div>
+            <div class="main-content">
+                <section class="section">
+                    <h1 class="section-header">
+                        @ViewData["TitleHeader"]
+                    </h1>
+                    @RenderBody()
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Assets/admin/dist/modules/jquery.min.js"></script>
+    <script src="/Assets/admin/dist/modules/popper.js"></script>
+    <script src="/Assets/admin/dist/modules/tooltip.js"></script>
+    <script src="/Assets/admin/dist/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Assets/admin/dist/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/Assets/admin/dist/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+    <script src="/Assets/admin/dist/js/sa-functions.js"></script>
+    <script src="/Assets/admin/dist/js/select2.min.js"></script>
+    <script src="/Assets/admin/dist/modules/chart.min.js"></script>
+    <script src="/Assets/admin/dist/modules/summernote/summernote-lite.js"></script>
+    <script src="/Assets/admin/dist/modules/toastr/build/toastr.min.js"></script>
+    <script src="~/Assets/ckeditor/ckeditor.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="/Assets/admin/dist/js/scripts.js"></script>
+    <script src="/Assets/admin/dist/js/custom.js"></script>
+</body>
+</html>
+
