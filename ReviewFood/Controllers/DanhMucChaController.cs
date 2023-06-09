@@ -15,10 +15,22 @@ namespace ReviewFood.Controllers
         // GET: DanhMuc
         public ActionResult Index(int maDMCha,int page = 1, int id = 0)
         {
-            
-            var TinTucs = db.BaiViets.Where(p=>p.IdDMCha == maDMCha).ToList();
 
+            var TinTucs = db.BaiViets.Where(p => p.IdDMCha == maDMCha).ToList();
             return View(TinTucs);
+            //var TinTucs = db.BaiViets.Where(p => p.IdDMCha == maDMCha).ToList();
+
+            //// Lấy đối tượng danh mục cha dựa trên maDMCha
+            //var danhMucCha = db.DanhMucs.FirstOrDefault(dm => dm.Id == maDMCha);
+
+            //if (danhMucCha == null)
+            //{
+            //    // Xử lý trường hợp không tìm thấy danh mục cha
+            //    return RedirectToAction("Index", "Home");
+            //}
+
+            //ViewBag.Title = danhMucCha.TenDanhMuc;
+            //return View(TinTucs);
         }
     }
 }

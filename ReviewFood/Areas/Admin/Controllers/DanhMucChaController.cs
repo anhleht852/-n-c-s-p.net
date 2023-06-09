@@ -74,28 +74,31 @@ namespace ReviewFood.Areas.Admin.Controllers
         }
 
         // GET: Admin/DanhMucCha/Delete/5
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             var data = db.DanhMucChas.Find(id);
-            if (data == null)
-            {
-                return RedirectToAction("Index", "DanhMucCha");
-            }
-            try
-            {
+            if (data == null) return RedirectToAction("Index", "DanhMucCha");
+            
                 db.DanhMucChas.Remove(data);
                 db.SaveChanges();
                 TempData["Done"] = "Xóa danh mục thành công";
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = ex.Message;
-            }
-            return RedirectToAction("Index", "DanhMucCha");
+                return RedirectToAction("Index", "DanhMucCha");
         }
 
 
 
+        public ActionResult Deletea(int id)
+        {
+            var data = db.DanhMucs.Find(id);
+            if (data == null) return RedirectToAction("Index", "DanhMuc");
+
+            db.DanhMucs.Remove(data);
+            db.SaveChanges();
+            TempData["Done"] = "Xóa danh mục thành công";
+
+            return RedirectToAction("Index", "DanhMuc");
+        }
 
 
         // GET: Admin/DanhMucCha/Delete/5

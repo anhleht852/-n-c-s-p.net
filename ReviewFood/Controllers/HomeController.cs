@@ -26,7 +26,7 @@ namespace ReviewFood.Controllers
                                 NgayTao = tt.NgayTao,
                                 HinhAnh = tt.HinhAnh,
                                 //IdUser = user.HoTen 
-                            }).Take(3);
+                            }).Take(5);
             ViewBag.Featured = featured;
 
             ViewBag.TopTen = (from tt in db.BaiViets
@@ -43,7 +43,7 @@ namespace ReviewFood.Controllers
                                   NgayTao = tt.NgayTao,
                                   HinhAnh = tt.HinhAnh,
                                   //IdUser = user.HoTen 
-                              }).Take(10);
+                              }).Take(30);
             return View();
         }
 

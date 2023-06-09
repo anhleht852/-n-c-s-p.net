@@ -2,6 +2,89 @@
 @{
     ViewBag.Title = "Details";
 }
+
+<style>
+ 
+
+    /* Áp dụng các phần tử chung */
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .col-full {
+        width: 100%;    
+    }
+
+    /* Định dạng trang */
+    .s-content {
+        padding-top: 65px; /* Khoảng cách phía trên của phần nội dung */
+        max-width: 800px; /* Chiều rộng tối đa của phần nội dung */
+        margin: 0 auto; /* Căn giữa nội dung trong trình duyệt */
+    }
+
+    /* Định dạng hộp chứa card */
+    .card {
+        background-color: #f8f8f8;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        padding: 20px;
+    }
+
+    .card-primary {
+        background-color: #f2f9fd;
+        border-color: #d0e7f5;
+    }
+
+    /* Định dạng các phần tử biểu mẫu */
+    .form-field {
+        margin-bottom: 15px;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    /* Định dạng nút lưu */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn--primary {
+        background-color: #428bca;
+        color: #fff;
+    }
+
+        .btn--primary:hover {
+            background-color: #3071a9;
+        }
+
+    .btn-wide {
+        width: 100%;
+    }
+
+    .btn--large {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    /* Định dạng thông báo lỗi */
+    .text-danger {
+        color: #d9534f;
+    }
+    .form-fidel {
+        height: 100px; /* Thay đổi giá trị chiều cao nhỏ hơn */
+    }
+</style>
 <section class="s-content s-content--top-padding s-content--narrow">
 
     <article class="row entry format-standard">
@@ -10,7 +93,6 @@
             <div class="card card-primary content">
                 <div class="row">
 
-                    <!-- START respond -->
                     <div id="respond" class="col-full">
                         @using (Html.BeginForm("Edit", "TaiKhoan", FormMethod.Post))
                         {
@@ -19,17 +101,18 @@
                             <fieldset>
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 @Html.HiddenFor(model => model.Id)
-                                <div class="form-field"> Tên Đăng Nhập
-                                    @Html.EditorFor(model => model.TenDangNhap, "Tên Đăng Nhập", new { htmlAttributes = new { @class = "full-width", @placeholder = "Tên đăng nhập*", @readonly = "true" } })
+                                <div class="form-field">
+                                    Tên đăng nhập
+                                    @Html.EditorFor(model => model.TenDangNhap, "Tên Đăng Nhập", new { htmlAttributes = new { @class = "full-width", @placeholder = "Tên đăng nhập", @readonly = "true" } })
                                     @Html.ValidationMessageFor(model => model.TenDangNhap, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="form-field"> Họ Tên
-                                    @Html.EditorFor(model => model.HoTen, "Họ Tên", new { htmlAttributes = new { @class = "full-width", @placeholder = "Họ tên*", @required = "true" } })
+                                <div class="form-field">
+                                    @Html.EditorFor(model => model.HoTen, "Họ Tên", new { htmlAttributes = new { @class = "full-width", @placeholder = "Họ tên", @required = "true" } })
                                     @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
                                 </div>
 
-                                <div class="form-field">Mật Khẩu
-                                    @Html.EditorFor(model => model.MatKhau, "Mật Khẩu", new { htmlAttributes = new { @class = "full-width", @placeholder = "Mật khẩu*", @required = "true", @type = "password" } })
+                                <div class="form-field">
+                                    @Html.EditorFor(model => model.MatKhau, "Mật Khẩu", new { htmlAttributes = new { @class = "full-width", @placeholder = "Mật khẩu", @required = "true", @type = "password" } })
                                     @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
                                 </div>
                                 Giới Tính:
@@ -37,26 +120,24 @@
                                 Nam: @Html.RadioButtonFor(model => model.GioiTinh, "true")
                                 @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
 
-                                <div class="form-field">Email
-                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "full-width", @placeholder = "Tên đăng nhập*", @required = "true", @type = "email" } })
+                                <div class="form-field"> 
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "full-width", @placeholder = "Email", @required = "true", @type = "email" } })
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
 
-                                <div class="form-field">Địa Chỉ
-                                    @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "full-width", @placeholder = "Tên đăng nhập*", @required = "true" } })
+                                <div class="form-field">
+                                    @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "full-width", @placeholder = "Địa Chỉ", @required = "true" } })
                                     @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
                                 </div>
 
-                                <div class="form-field">Ngày Sinh
-                                    @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "full-width", @placeholder = "Tên đăng nhập*", @required = "true", @type = "date" })
+                                <div class="form-field"> 
+                                    @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "full-width", @placeholder = "Ngày Sinh", @required = "true", @type = "date" })
                                     @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
                                 </div>
                                 <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Save" type="submit">
                             </fieldset>
                         }
                     </div>
-                    <!-- END respond-->
-
                 </div>
             </div>
         </div>

@@ -20,7 +20,13 @@ namespace ReviewFood.Areas.Admin.Controllers
                 TempData.Remove("Done");
                 TempData.Remove("Error");
             }
-            return View(db.DanhMucs.ToList());
+            var danhMucs = db.DanhMucs.ToList();
+            //var danhMucChas = db.DanhMucChas.ToList();
+
+            ViewBag.DanhMucs = danhMucs;
+            //ViewBag.DanhMucChas = danhMucChas;
+
+            return View(danhMucs);
         }
 
         // GET: Admin/DanhMuc/Details/5
@@ -60,9 +66,6 @@ namespace ReviewFood.Areas.Admin.Controllers
         }
 
 
-
-
-
         // GET: Admin/DanhMuc/Edit/5
         public ActionResult Edit(int id)
         {
@@ -80,9 +83,9 @@ namespace ReviewFood.Areas.Admin.Controllers
         {
             try
             {
-                var existingDanhMuc = db.DanhMucs.Find(danhMuc.Id);
-                existingDanhMuc.TenDanhMuc = danhMuc.TenDanhMuc;
-                existingDanhMuc.NgaySua = DateTime.Now;
+                var danhMucToUpdate = db.DanhMucs.Find(danhMuc.Id);
+                danhMucToUpdate.TenDanhMuc = danhMuc.TenDanhMuc;
+                danhMucToUpdate.NgaySua = DateTime.Now;
                 db.SaveChanges();
                 ViewBag.Done = "Sửa danh mục thành công";
             }
@@ -105,6 +108,31 @@ namespace ReviewFood.Areas.Admin.Controllers
 
             return RedirectToAction("Index", "DanhMuc");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

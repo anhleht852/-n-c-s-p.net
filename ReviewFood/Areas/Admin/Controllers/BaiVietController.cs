@@ -22,6 +22,7 @@ namespace ReviewFood.Areas.Admin.Controllers
             else ViewBag.IdDanhMuc = IdDanhMuc;
             ViewBag.DanhMucs = db.DanhMucs.ToList();
             List<BaiViet> baiViets = new List<BaiViet>();
+
             if (idDM == 0 && keyword == "" || idDM == 0 && keyword == null)
                 baiViets = db.BaiViets.ToList();
             else if (idDM != 0 && keyword == "")
@@ -30,13 +31,13 @@ namespace ReviewFood.Areas.Admin.Controllers
                 baiViets = db.BaiViets.Where(dm => dm.TieuDe.Contains(keyword)).ToList();
             else
                 baiViets = db.BaiViets.Where(dm => dm.TieuDe.Contains(keyword) && dm.IdDanhMuc.Equals(idDM)).ToList();
-            if (TempData["Done"] != null || TempData["Error"] != null)
-            {
-                ViewBag.Done = TempData["Done"];
-                ViewBag.Error = TempData["Error"];
-                TempData.Remove("Done");
-                TempData.Remove("Error");
-            }
+            //if (TempData["Done"] != null || TempData["Error"] != null)
+            //{
+            //    ViewBag.Done = TempData["Done"];
+            //    ViewBag.Error = TempData["Error"];
+            //    TempData.Remove("Done");
+            //    TempData.Remove("Error");
+            //}
             return View(baiViets);
         }
 

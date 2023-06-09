@@ -5,37 +5,75 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <table class="table table-striped" border="1">
-    <thead class=" table-success ">
+        <thead class=" table-success ">
+            <tr>
+                <th scope="col"> Tên Danh Mục 2</th>
+                <th scope="col"> Ngày Tạo</th>
+                <th scope="col"> Chức năng </th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDanhMuc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTao)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+                    @Html.ActionLink("Create", "create", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+<!-- Hiển thị danh sách danh mục -->
+@*<h2>Danh mục</h2>
+<table>
+    <thead>
         <tr>
-            <th scope="col">
-                @*@Html.DisplayNameFor(model => model.TenDanhMuc)*@
-                Tên Danh Mục 2
-            </th>
-            <th scope="col">
-                Ngày Tạo
-            </th>
-            <th> Chức năng </th>
+            <th>ID</th>
+            <th>Tên danh mục</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var danhMuc in Model)
+        {
+            <tr>
+                <td>@danhMuc.TenDanhMuc</td>
+                <td>@danhMuc.NgayTao</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
 
-    @foreach (var item in Model)
-    {
+<!-- Hiển thị danh sách danh mục cha -->
+@*<h2>Danh mục cha</h2>
+<table>
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenDanhMuc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayTao)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
-                @Html.ActionLink("Create", "create", new { id = item.Id })
-            </td>
+            <th>ID</th>
+            <th>Tên danh mục cha</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var danhMucChas in Model)
+        {
+            <tr>
+                <td>@danhMucChas.TenDanhMuc</td>
+                <td>@danhMucChas.DanhMucCha</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
 
-</table>
 @section Scripts
 {
     @{

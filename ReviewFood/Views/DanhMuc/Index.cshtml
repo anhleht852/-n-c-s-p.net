@@ -1,8 +1,7 @@
 ﻿
 @model IEnumerable<ReviewFood.Models.BaiViet_DanhMuc>
 @using PagedList.Mvc
-@{
-}
+
 <section class="s-content s-content--top-padding">
 
     <div class="row narrow">
@@ -16,45 +15,68 @@
 
             @foreach (var item in Model)
             {
-                <article class="col-block">
+
+                @*<article class="col-block">
 
                     <div class="item-entry" data-aos="zoom-in">
                         <div class="item-entry__thumb">
-                            <a href="/BaiViet/Index/@item.MaTinTuc" class="item-entry__thumb-link">
+                            <a href="/BaiViet/Index/@item.Id" class="item-entry__thumb-link">
                                 <img src="/Assets/Image/@item.HinhAnh"
                                      srcset="/Assets/Image/@item.HinhAnh" alt="">
                             </a>
+
                         </div>
 
                         <div class="item-entry__text">
                             <div class="item-entry__cat">
-                                <a href="/DanhMuc/Index/@item.MaDanhMuc">@item.DanhMuc</a>
-
+                                <a href="/DanhMuc/Index/@item.DanhMuc.Id">@item.DanhMuc.TenDanhMuc</a>
+                                <br />
+                                <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
                             </div>
-
                             <h1 class="item-entry__title">
-                                <a href="/BaiViet/Index/@item.MaTinTuc">@item.TieuDe</a>
+                                <a href="/BaiViet/Index/@item.Id">@item.TieuDe</a>
                             </h1>
 
                             <div class="item-entry__date">
-                                <a href="/BaiViet/Index/@item.MaTinTuc">@item.NgayTao</a>
+                                <a href="/BaiViet/Index/@item.Id">@item.NgayTao</a>
                             </div>
                         </div>
-                    </div> <!-- item-entry -->
+                    </div>
 
-                </article> <!-- end article -->
+                </article>*@
+                <article class="col-block">
+
+                <div class="item-entry" data-aos="zoom-in">
+                    <div class="item-entry__thumb">
+                        <a href="/BaiViet/Index/@item.MaTinTuc" class="item-entry__thumb-link">
+                            <img src="/Assets/Image/@item.HinhAnh"
+                                 srcset="/Assets/Image/@item.HinhAnh" alt="">
+                        </a>
+                    </div>
+
+                    <div class="item-entry__text">
+                        <div class="item-entry__cat">
+                            <a href="/DanhMuc/Index/@item.MaDanhMuc">@item.DanhMuc</a>
+                            @*<a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>*@
+
+                        </div>
+
+                        <h1 class="item-entry__title">
+                            <a href="/BaiViet/Index/@item.MaTinTuc">@item.TieuDe</a>
+                        </h1>
+
+                        <div class="item-entry__date">
+                            <a href="/BaiViet/Index/@item.MaTinTuc">@item.NgayTao</a>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
             }
 
-        </div> <!-- end entries -->
-    </div> <!-- end entries-wrap -->
+        </div>  
+    </div>  
 
-    @*<div class="row pagination-wrap">
-        <div class="col-full">
-            <nav class="pgn" data-aos="fade-up">
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @class = "pgn__num" }))
-            </nav>
-        </div>
-    </div>*@
 
 </section>
 

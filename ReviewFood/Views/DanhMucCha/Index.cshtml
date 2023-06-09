@@ -77,19 +77,21 @@
 
 @model IEnumerable<ReviewFood.Models.BaiViet>
 @using PagedList.Mvc
-@{
-}
-<section class="s-content s-content--top-padding">
 
-    <div class="row narrow">
-        <div class="col-full s-content__header" data-aos="fade-up">
-            <h1 class="display-1 display-1--with-line-sep">@ViewBag.Title</h1>
+<section class="s-content s-content--top-padding">
+    @*@foreach (var item in Model)
+    {
+        <div class="row narrow">
+            <div class="col-full s-content__header" data-aos="fade-up">
+                <h1 class="display-1 display-1--with-line-sep">@ViewBag.Title</h1>
+                <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
+            </div>
         </div>
-    </div>
+    }*@
+
 
     <div class="row entries-wrap add-top-padding wide">
         <div class="entries">
-
             @foreach (var item in Model)
             {
                 <article class="col-block">
@@ -100,7 +102,7 @@
                                 <img src="/Assets/Image/@item.HinhAnh"
                                      srcset="/Assets/Image/@item.HinhAnh" alt="">
                             </a>
-                           
+
                         </div>
 
                         <div class="item-entry__text">
@@ -108,8 +110,9 @@
                                 @*<a href="/DanhMuc/Index/@item.DanhMuc.Id">@</a>*@
                                 @*<a href="@Url.Action("Index", "DanhMuc", new { maDM = @item.DanhMuc.Id })" class="dropbtn">@item.DanhMuc.TenDanhMuc</a>*@
                                 <a href="/DanhMuc/Index/@item.DanhMuc.Id">@item.DanhMuc.TenDanhMuc</a>
+                                <br />
+                                <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
                             </div>
-
                             <h1 class="item-entry__title">
                                 <a href="/BaiViet/Index/@item.Id">@item.TieuDe</a>
                             </h1>
@@ -118,21 +121,14 @@
                                 <a href="/BaiViet/Index/@item.Id">@item.NgayTao</a>
                             </div>
                         </div>
-                    </div> <!-- item-entry -->
+                    </div>
 
-                </article> <!-- end article -->
+                </article>
             }
 
-        </div> <!-- end entries -->
-    </div> <!-- end entries-wrap -->
-
-    @*<div class="row pagination-wrap">
-        <div class="col-full">
-            <nav class="pgn" data-aos="fade-up">
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @class = "pgn__num" }))
-            </nav>
         </div>
-    </div>*@
+    </div>
+
 
 </section>
 
