@@ -68,6 +68,7 @@ namespace ReviewFood.Controllers
         public ActionResult Create()
         {
             ViewBag.DanhMucs = db.DanhMucs.ToList();
+            ViewBag.DanhMucChas = db.DanhMucChas.ToList();
             return View();
         }
 
@@ -127,6 +128,8 @@ namespace ReviewFood.Controllers
                 ViewBag.Error = ex.Message;
             }
             ViewBag.DanhMucs = db.DanhMucs.ToList();
+            ViewBag.DanhMucChas = db.DanhMucChas.ToList();
+
             return View(baiViet);
         }
         public bool extensionFile(string extension)

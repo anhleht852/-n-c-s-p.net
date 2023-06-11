@@ -1,76 +1,76 @@
 ﻿@*@model PagedList.IPagedList<ReviewFood.Models.BaiViet_DanhMucCha>
-@using PagedList.Mvc
-@{
-}
-<section class="s-content s-content--top-padding">
+    @using PagedList.Mvc
+    @{
+    }
+    <section class="s-content s-content--top-padding">
 
-    <div class="row narrow">
-        <div class="col-full s-content__header" data-aos="fade-up">
-            <h1 class="display-1 display-1--with-line-sep">@ViewBag.Title</h1>
-<h1 class="display-2 display-2--with-line-sep">@ViewBag.Titles</h1>
-</div>
-</div>
-
-<div class="row entries-wrap add-top-padding wide">
-    <div class="entries">
-
-        @foreach (var item in Model)
-        {
-            <article class="col-block">
-
-                <div class="item-entry" data-aos="zoom-in">
-                    <div class="item-entry__thumb">
-                        <a href="/BaiViet/Index/@item.MaTinTuc" class="item-entry__thumb-link">
-                            <img src="/Assets/Image/@item.HinhAnh"
-                                 srcset="/Assets/Image/@item.HinhAnh" alt="">
-                        </a>
-                        <a href="/BaiViet/Index/@item.MaDMCha" class="item-entry__thumb-link">
-                    </div>
-
-                    <div class="item-entry__text">
-                        <div class="item-entry__cat">
-                            <a href="/DanhMuc/Index/@item.MaDanhMuc">@item.DanhMuc</a>
-                        </div>
-
-                        <h1 class="item-entry__title">
-                            <a href="/BaiViet/Index/@item.MaTinTuc">@item.TieuDe</a>
-                        </h1>
-
-                        <div class="item-entry__date">
-                            <a href="/BaiViet/Index/@item.MaTinTuc">@item.NgayTao</a>
-                        </div>
-                    </div>
-                </div>
-  item-entry 
-</article>  end article 
-}
-
-</div>
-  end entries 
-</div>  end entries-wrap 
-<div class="row pagination-wrap">
-        <div class="col-full">
-            <nav class="pgn" data-aos="fade-up">
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @class = "pgn__num" }))
-            </nav>
-        </div>
+        <div class="row narrow">
+            <div class="col-full s-content__header" data-aos="fade-up">
+                <h1 class="display-1 display-1--with-line-sep">@ViewBag.Title</h1>
+    <h1 class="display-2 display-2--with-line-sep">@ViewBag.Titles</h1>
+    </div>
     </div>
 
-</section>
+    <div class="row entries-wrap add-top-padding wide">
+        <div class="entries">
 
-@section Scripts
-{
-    <script>
-    var link = $('.pagination > li');
-        var link_a = $('.pagination > li > a');
-        console.log(link)
-        console.log(link_a)
-        for (let i = 0; i < link.length; i++) {
-            if ($(link[i]).hasClass('PagedList-skipToNext')) $(link_a[i]).addClass("pgn__next")
-            else if ($(link[i]).hasClass('PagedList-skipToPrevious')) $(link_a[i]).addClass("pgn__prev")
-            else $(link_a[i]).addClass("pgn__num")
-        }</script>
-}*@
+            @foreach (var item in Model)
+            {
+                <article class="col-block">
+
+                    <div class="item-entry" data-aos="zoom-in">
+                        <div class="item-entry__thumb">
+                            <a href="/BaiViet/Index/@item.MaTinTuc" class="item-entry__thumb-link">
+                                <img src="/Assets/Image/@item.HinhAnh"
+                                     srcset="/Assets/Image/@item.HinhAnh" alt="">
+                            </a>
+                            <a href="/BaiViet/Index/@item.MaDMCha" class="item-entry__thumb-link">
+                        </div>
+
+                        <div class="item-entry__text">
+                            <div class="item-entry__cat">
+                                <a href="/DanhMuc/Index/@item.MaDanhMuc">@item.DanhMuc</a>
+                            </div>
+
+                            <h1 class="item-entry__title">
+                                <a href="/BaiViet/Index/@item.MaTinTuc">@item.TieuDe</a>
+                            </h1>
+
+                            <div class="item-entry__date">
+                                <a href="/BaiViet/Index/@item.MaTinTuc">@item.NgayTao</a>
+                            </div>
+                        </div>
+                    </div>
+      item-entry
+    </article>  end article
+    }
+
+    </div>
+      end entries
+    </div>  end entries-wrap
+    <div class="row pagination-wrap">
+            <div class="col-full">
+                <nav class="pgn" data-aos="fade-up">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @class = "pgn__num" }))
+                </nav>
+            </div>
+        </div>
+
+    </section>
+
+    @section Scripts
+    {
+        <script>
+        var link = $('.pagination > li');
+            var link_a = $('.pagination > li > a');
+            console.log(link)
+            console.log(link_a)
+            for (let i = 0; i < link.length; i++) {
+                if ($(link[i]).hasClass('PagedList-skipToNext')) $(link_a[i]).addClass("pgn__next")
+                else if ($(link[i]).hasClass('PagedList-skipToPrevious')) $(link_a[i]).addClass("pgn__prev")
+                else $(link_a[i]).addClass("pgn__num")
+            }</script>
+    }*@
 
 
 
@@ -80,14 +80,14 @@
 
 <section class="s-content s-content--top-padding">
     @*@foreach (var item in Model)
-    {
-        <div class="row narrow">
-            <div class="col-full s-content__header" data-aos="fade-up">
-                <h1 class="display-1 display-1--with-line-sep">@ViewBag.Title</h1>
-                <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
+        {
+            <div class="row narrow">
+                <div class="col-full s-content__header" data-aos="fade-up">
+                    <h1 class="display-1 display-1--with-line-sep">@ViewBag.Title</h1>
+                    <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
+                </div>
             </div>
-        </div>
-    }*@
+        }*@
 
 
     <div class="row entries-wrap add-top-padding wide">
@@ -95,14 +95,12 @@
             @foreach (var item in Model)
             {
                 <article class="col-block">
-
                     <div class="item-entry" data-aos="zoom-in">
                         <div class="item-entry__thumb">
                             <a href="/BaiViet/Index/@item.Id" class="item-entry__thumb-link">
                                 <img src="/Assets/Image/@item.HinhAnh"
                                      srcset="/Assets/Image/@item.HinhAnh" alt="">
                             </a>
-
                         </div>
 
                         <div class="item-entry__text">
@@ -128,14 +126,67 @@
 
         </div>
     </div>
-
-
 </section>
 
+
+<footer class="s-footer">
+
+    <div class="s-footer__main">
+        <div class="row">
+
+            <div class="col-six tab-full s-footer__about">
+
+                <h4>Về Trang web Review </h4>
+
+                <p>
+                    Trang web Review Đồ Ăn Hàng Đầu Việt Nam
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="s-footer__bottom">
+        <div class="row">
+
+            <div class="col-six">
+                <ul class="footer-social">
+                    <li>
+                        <a href="#0"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-six">
+                <div class="s-footer__copyright">
+                    <span>
+
+                        Copyright &copy; Review Do An Designer
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+    </div>
+
+</footer>
 @section Scripts
 {
     <script>
-    var link = $('.pagination > li');
+        var link = $('.pagination > li');
         var link_a = $('.pagination > li > a');
         console.log(link)
         console.log(link_a)

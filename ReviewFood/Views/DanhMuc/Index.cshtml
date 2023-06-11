@@ -18,71 +18,126 @@
 
                 @*<article class="col-block">
 
+                        <div class="item-entry" data-aos="zoom-in">
+                            <div class="item-entry__thumb">
+                                <a href="/BaiViet/Index/@item.Id" class="item-entry__thumb-link">
+                                    <img src="/Assets/Image/@item.HinhAnh"
+                                         srcset="/Assets/Image/@item.HinhAnh" alt="">
+                                </a>
+
+                            </div>
+
+                            <div class="item-entry__text">
+                                <div class="item-entry__cat">
+                                    <a href="/DanhMuc/Index/@item.DanhMuc.Id">@item.DanhMuc.TenDanhMuc</a>
+                                    <br />
+                                    <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
+                                </div>
+                                <h1 class="item-entry__title">
+                                    <a href="/BaiViet/Index/@item.Id">@item.TieuDe</a>
+                                </h1>
+
+                                <div class="item-entry__date">
+                                    <a href="/BaiViet/Index/@item.Id">@item.NgayTao</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>*@
+                <article class="col-block">
+
                     <div class="item-entry" data-aos="zoom-in">
                         <div class="item-entry__thumb">
-                            <a href="/BaiViet/Index/@item.Id" class="item-entry__thumb-link">
+                            <a href="/BaiViet/Index/@item.MaTinTuc" class="item-entry__thumb-link">
                                 <img src="/Assets/Image/@item.HinhAnh"
                                      srcset="/Assets/Image/@item.HinhAnh" alt="">
                             </a>
-
                         </div>
 
                         <div class="item-entry__text">
                             <div class="item-entry__cat">
-                                <a href="/DanhMuc/Index/@item.DanhMuc.Id">@item.DanhMuc.TenDanhMuc</a>
-                                <br />
-                                <a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>
+                                <a href="/DanhMuc/Index/@item.MaDanhMuc">@item.DanhMuc</a>
+                                @*<a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>*@
+
                             </div>
+
                             <h1 class="item-entry__title">
-                                <a href="/BaiViet/Index/@item.Id">@item.TieuDe</a>
+                                <a href="/BaiViet/Index/@item.MaTinTuc">@item.TieuDe</a>
                             </h1>
 
                             <div class="item-entry__date">
-                                <a href="/BaiViet/Index/@item.Id">@item.NgayTao</a>
+                                <a href="/BaiViet/Index/@item.MaTinTuc">@item.NgayTao</a>
                             </div>
                         </div>
                     </div>
 
-                </article>*@
-                <article class="col-block">
-
-                <div class="item-entry" data-aos="zoom-in">
-                    <div class="item-entry__thumb">
-                        <a href="/BaiViet/Index/@item.MaTinTuc" class="item-entry__thumb-link">
-                            <img src="/Assets/Image/@item.HinhAnh"
-                                 srcset="/Assets/Image/@item.HinhAnh" alt="">
-                        </a>
-                    </div>
-
-                    <div class="item-entry__text">
-                        <div class="item-entry__cat">
-                            <a href="/DanhMuc/Index/@item.MaDanhMuc">@item.DanhMuc</a>
-                            @*<a href="/DanhMucCha/Index/@item.DanhMucCha.MaDMCha">@item.DanhMucCha.TenDM</a>*@
-
-                        </div>
-
-                        <h1 class="item-entry__title">
-                            <a href="/BaiViet/Index/@item.MaTinTuc">@item.TieuDe</a>
-                        </h1>
-
-                        <div class="item-entry__date">
-                            <a href="/BaiViet/Index/@item.MaTinTuc">@item.NgayTao</a>
-                        </div>
-                    </div>
-                </div>
-
-            </article>
+                </article>
             }
 
-        </div>  
-    </div>  
-
-
+        </div>
+    </div>
 </section>
+
+<footer class="s-footer">
+
+    <div class="s-footer__main">
+        <div class="row">
+
+            <div class="col-six tab-full s-footer__about">
+
+                <h4>Về Trang web Review </h4>
+
+                <p>
+                    Trang web Review Đồ Ăn Hàng Đầu Việt Nam
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="s-footer__bottom">
+        <div class="row">
+
+            <div class="col-six">
+                <ul class="footer-social">
+                    <li>
+                        <a href="#0"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-six">
+                <div class="s-footer__copyright">
+                    <span>
+
+                        Copyright &copy; Review Do An Designer
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+    </div>
+
+</footer>
+
 
 @section Scripts
 {
-    <script>var link = $('.pagination > li');
+    <script>
+        var link = $('.pagination > li');
         var link_a = $('.pagination > li > a');
         console.log(link)
         console.log(link_a)

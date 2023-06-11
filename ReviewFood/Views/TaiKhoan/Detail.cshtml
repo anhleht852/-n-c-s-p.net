@@ -3,6 +3,65 @@
     ViewBag.Title = "Detail";
     string data = Session["TaiKhoan"].ToString();
 }
+
+<style>
+    /* Thêm CSS tùy chỉnh vào đây */
+    .s-content {
+        /* CSS cho phần section s-content */
+        /* Ví dụ: */
+        margin: 20px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        padding-top: 225px;
+    }
+
+    .row {
+        /* CSS cho phần row */
+        /* Ví dụ: */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .entry__media {
+        /* CSS cho phần entry__media */
+        /* Ví dụ: */
+        width: 100%;
+    }
+
+    .card {
+        /* CSS cho phần card */
+        /* Ví dụ: */
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    #respond {
+        /* CSS cho phần respond */
+        /* Ví dụ: */
+        margin-top: 20px;
+    }
+
+    .form-field {
+        /* CSS cho phần form-field */
+        /* Ví dụ: */
+        margin-bottom: 10px;
+    }
+
+    .btn-group {
+        /* CSS cho phần btn-group */
+        /* Ví dụ: */
+        display: flex;
+        justify-content: space-between;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+</style>
 <section class="s-content s-content--top-padding s-content--narrow">
 
     <article class="row entry format-standard">
@@ -10,13 +69,10 @@
         <div class="entry__media col-full">
             <div class="card card-primary content">
                 <div class="row">
-
-                    <!-- START respond -->
                     <div id="respond" class="col-full">
                         @using (Html.BeginForm("Edit", "TaiKhoan", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
-
                             <fieldset>
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 @Html.HiddenFor(model => model.Id)
@@ -58,7 +114,6 @@
                             </fieldset>
                         }
                     </div>
-                    <!-- END respond-->
 
                 </div>
             </div>

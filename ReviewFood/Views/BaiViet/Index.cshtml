@@ -1,15 +1,15 @@
 ﻿@model ReviewFood.Models.BaiViet
 
-<section class="s-content s-content--top-padding s-content--narrow">
+<section class="s-content s-content--top-padding s-content--narrow ">
     <div class="row">
         <div class="column left" style="width: 70%; float: left; padding-right: 2%;">
             <article class="row entry format-standard">
 
-                <div class="entry__media col-full">
+                <div class="entry__media col-full style="margin: auto;">
                     <div class="entry__post-thumb">
                         <img src="/Assets/Image/@Model.HinhAnh"
                              srcset="/Assets/Image/@Model.HinhAnh"
-                             sizes="(max-width: 200px) 10vw, 20px" alt="hinh anhhhhhhhhh">
+                             sizes="(max-width: 200px) 10vw, 20px " alt="hinh anh">
                     </div>
                 </div>
                 <div class="entry__header col-full">
@@ -20,22 +20,21 @@
                         <li class="date">@Model.NgayTao</li>
                     </ul>
                 </div>
-            </article> <!-- end entry/article -->
+            </article>
 
             <div class="col-full entry__main">
                 <div class="row s-content__nav img-reponsive" style="height:100%;width:100%">
                     @Html.Raw(Model.NoiDung)
                 </div>
-            </div> <!-- end s-content__pagenav -->
+            </div>
 
-        </div>  <!--end column left-->
+        </div>
 
 
         <div class="column right" style="width: 30%; float: right; position:sticky;  top: 100px; bottom:0;">
             <div class="comments-wrap">
                 <div class="row comment-respond">
 
-                    <!-- START respond -->
                     <div id="respond" class="col-full">
                         <h3 class="h2">Thêm bình luận</h3>
 
@@ -48,17 +47,15 @@
                                 </div>
 
                             </fieldset>
-                        </form> <!-- end form -->
+                        </form>
 
                     </div>
-                    <!-- END respond-->
 
-                </div> <!-- end comment-respond -->
+
+                </div>
 
                 <div id="comments" class="row">
                     <div class="col-full">
-
-                        <!-- START commentlist -->
                         <ol class="commentlist">
                             @foreach (var item in ViewBag.Comments)
                             {
@@ -79,24 +76,71 @@
                                                 @item.NoiDung
                                             </p>
                                         </div>
-
                                     </div>
-
-                                </li><!-- end comment level 1 -->
+                                </li>
                             }
                         </ol>
-                        <!-- END commentlist -->
-
-                    </div> <!-- end col-full -->
-
-                </div> <!-- end comments -->
-
-            </div> <!-- end comments-wrap -->
-
-        </div>  <!--end column right-->
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+<footer class="s-footer">
+
+    <div class="s-footer__main">
+        <div class="row">
+
+            <div class="col-six tab-full s-footer__about">
+
+                <h4>Về Trang web Review </h4>
+
+                <p>
+                    Trang web Review Đồ Ăn Hàng Đầu Việt Nam
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="s-footer__bottom">
+        <div class="row">
+
+            <div class="col-six">
+                <ul class="footer-social">
+                    <li>
+                        <a href="#0"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-six">
+                <div class="s-footer__copyright">
+                    <span>
+
+                        Copyright &copy; Review Do An Designer
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+    </div>
+
+</footer>
+
 @section Scripts
 {
     @{

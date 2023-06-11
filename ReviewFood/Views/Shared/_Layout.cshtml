@@ -8,22 +8,19 @@
     <title>Review Đồ ăn</title>
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <!-- CSS
     ================================================== -->
+    <link rel="stylesheet" href="/Assets/admin/dist/modules/summernote/summernote-lite.css">
     <link rel="stylesheet" href="~/Content/css/base3.css">
     <link rel="stylesheet" href="~/Content/css/vendor.css">
     <link rel="stylesheet" href="~/Content/css/main2.css">
     <link rel="stylesheet" href="/Assets/admin/dist/modules/toastr/build/toastr.min.css">
-
     <!-- script
     ================================================== -->
     <script src="~/Scripts/js/modernizr.js"></script>
-
     <!-- favicons
     ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -31,55 +28,63 @@
 
 </head>
 
+<style>
+    header__search-trigger hide-content header__overlay-close search-submit header__overlay-close .search-is-visible .header__search {
+        all: initial;
+    }
+    .header__search {
+        display: block;
+        text-align: center;
+        background-color: #FFFFFF;
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0px;
+        left: 1270px;
+        width: 33%;
+        height: 40%;
+    }
+  
+</style>
+
 <body id="top">
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
-
-    <!-- header
-    ================================================== -->
     <header class="s-header header">
-        <div class="header__logo"> 
+        <div class="header__logo">
             <a class="logo" href="/">REVIEWFOOD</a>
-        </div> 
-    <!-- end header__logo -->
+        </div>
+
+        <!-- end header__logo -->
         <a class="header__search-trigger" href="#0"></a>
         <div class="header__search">
-
             <form role="search" method="get" class="header__search-form" action="/BaiViet/Search">
                 <label>
-                    <span class="hide-content">Search for:</span>
-                    <input type="search" class="search-field" placeholder="Nhập thứ bạn cần tìm" value="" name="keywork" title="Search for:" autocomplete="off">
+                    @*<span class="hide-content">Search for:</span>*@
+                   
+                    <input type="search" class="search-field" placeholder="Keywords" value="" name="keywork" title="" autocomplete="off">
                 </label>
                 <input type="submit" class="search-submit" value="Search">
             </form>
             <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
 
-        </div>   
+        </div>
 
         <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-        @{ Html.RenderAction("MenuView", "Home"); } 
+        @{ Html.RenderAction("MenuView", "Home"); }
 
-    </header> 
+    </header>
 
 
     @RenderBody()
-   
+
     <!-- Java Script
     ================================================== -->
+    <script src="/Assets/admin/dist/modules/summernote/summernote-lite.js"></script>
     <script src="~/Scripts/js/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/js/plugins.js"></script>
     <script src="~/Scripts/js/main.js"></script>
     <script src="/Assets/admin/dist/modules/toastr/build/toastr.min.js"></script>
     @RenderSection("Scripts", required: false)
+
 
 </body>
 
