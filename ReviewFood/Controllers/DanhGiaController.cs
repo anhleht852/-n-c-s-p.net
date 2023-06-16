@@ -20,17 +20,14 @@ namespace ReviewFood.Controllers
                 return Redirect("/BaiViet/Index/" + MaTinTuc);
             };
             string data = Session["TaiKhoan"].ToString();
-            string[] Account = new string[3];
+            string[] Account = new string[3];// khởi tạo một mảng có tên là Account với kích thước là 3 phần tử.
             Account = (data != null) ? data.Split(',') : Account;
-            //if (id == int.Parse(Account[2]))
-            //{
-            //    Session.Remove("TaiKhoan");
-            //    return RedirectToAction("Index", "Login");
-            //}
+            //để tách chuỗi data thành các phần tử riêng biệt dựa trên ký tự phân cách là dấu phẩy (',').
             DanhGia cmt = new DanhGia();
             cmt.NoiDung = cMessage;
             cmt.IdTinTuc = MaTinTuc;
-            cmt.IdTaiKhoan = int.Parse(Account[2]);
+
+            cmt.IdTaiKhoan = int.Parse(Account[2]);//lấy giá trị từ phần tử thứ 2 trong mảng Account, chuyển đổi nó thành số nguyên và gán cho thuộc tính IdTaiKhoan của đối tượng cmt.
             cmt.NgayTao = DateTime.Now;
             cmt.NgaySua = DateTime.Now;
             cmt.TrangThai = true;

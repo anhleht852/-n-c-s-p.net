@@ -29,6 +29,7 @@ namespace ReviewFood.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+            // comments bài viết 
             object comments = (from cmt in db.DanhGias
                                join tt in db.BaiViets on cmt.IdTinTuc equals tt.Id
                                join tk in db.TaiKhoans on cmt.IdTaiKhoan equals tk.Id
@@ -71,6 +72,12 @@ namespace ReviewFood.Controllers
             ViewBag.DanhMucChas = db.DanhMucChas.ToList();
             return View();
         }
+
+
+
+
+
+
 
         // POST: Admin/BaiViet/Create
         [HttpPost]

@@ -31,13 +31,7 @@ namespace ReviewFood.Areas.Admin.Controllers
                 baiViets = db.BaiViets.Where(dm => dm.TieuDe.Contains(keyword)).ToList();
             else
                 baiViets = db.BaiViets.Where(dm => dm.TieuDe.Contains(keyword) && dm.IdDanhMuc.Equals(idDM)).ToList();
-            //if (TempData["Done"] != null || TempData["Error"] != null)
-            //{
-            //    ViewBag.Done = TempData["Done"];
-            //    ViewBag.Error = TempData["Error"];
-            //    TempData.Remove("Done");
-            //    TempData.Remove("Error");
-            //}
+       
             return View(baiViets);
         }
 

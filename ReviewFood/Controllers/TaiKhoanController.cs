@@ -43,7 +43,6 @@ namespace ReviewFood.Controllers
                 string data_account = data.TenDangNhap + "," + data.HoTen + "," + data.Id + ",";
                 //Session["TaiKhoan"] = data;
                 Session.Add("TaiKhoan", data_account);
-      
                 return Redirect("/");
             }
         }
@@ -51,8 +50,6 @@ namespace ReviewFood.Controllers
             {
                 Session.Remove("TaiKhoan");
                 return Redirect("/");
-                //Session.Abandon();
-                //return RedirectToAction("Login", "TaiKhoan");
             }
 
             public ActionResult AdminToHome()
